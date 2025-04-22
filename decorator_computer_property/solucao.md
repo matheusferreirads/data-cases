@@ -1,6 +1,6 @@
 # Resolução
 Criação de um decorator para cachear dados, simulando a funcionalidade de um graph database, onde a entidade nó é única no grafo (considerando seus atributos).
-Existem alguns decorator do python (lib functools) que servem para cachear dados, porém eles têm algumas desvantagens se fossem utilizados aqui.
+Existem alguns decorators do python (lib functools) que servem para cachear dados, porém eles têm algumas desvantagens se fossem utilizados aqui.
 Abaixo segue uma tabela de comparativo, para entender o porque foi feito dessa forma mais "caseira", que foi a melhor forma que encontrei de resolver o problema,  ao invés de utilizar algum dos decorators já existentes
 
 Na classe Vector, como sugestão, inseri a função abaixo
