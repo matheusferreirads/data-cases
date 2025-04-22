@@ -5,9 +5,10 @@ Abaixo segue uma tabela de comparativo, para entender o porque foi feito dessa f
 
 Na classe Vector, como sugestão, inseri a função abaixo
 
+```python
 def __repr__(self):
-        return f'Vector({self.x!r}, {self.y!r}, {self.z!r})'
-
+    return f'Vector({self.x!r}, {self.y!r}, {self.z!r})'
+```
 Esse método especial facilita a depuração.
 A utilização do WeakKeyDictionary permite que o cache da classe Vector seja limpo assim que não tiver mais nada referenciando aquele valor cacheado a uma função existente.
 Dessa forma evita sobrecarga de memória no decorator.
@@ -25,15 +26,4 @@ Comparativo com Outros Decorators de Cache
 
 
 
-## Sugestão de Melhoria na Classe `Vector`
 
-Como sugestão para facilitar a depuração, foi inserido o método especial `__repr__` na classe `Vector`:
-
-```python
-def __repr__(self):
-    return f'Vector({self.x!r}, {self.y!r}, {self.z!r})'
-```
-
-Com isso, a representação textual do objeto `Vector` se torna mais informativa, especialmente útil durante debugging.
-
----
