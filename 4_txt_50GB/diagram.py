@@ -7,7 +7,7 @@ from diagrams.aws.analytics import Glue
 from diagrams.aws.database import Redshift
 from diagrams.aws.analytics import Quicksight
 
-with Diagram("Daily ETL Pipeline on AWS", show=False, direction="LR"):
+with Diagram("ETL Pipeline on AWS", show=False, direction="LR"):
     with Cluster("Raw Data Storage"):
         raw_bucket = S3("S3 Raw Bucket\n50GB .txt @03h")
 
