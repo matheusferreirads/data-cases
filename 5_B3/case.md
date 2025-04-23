@@ -1,6 +1,6 @@
 ## Cenário
 
-Todo dia às **03h** um arquivo `.txt` com **50GB** é disponibilizado em um bucket **S3**, contendo informações de todas as operações que aconteceram no dia anterior. Esses dados precisam ser tratados e disponibilizados em um **data warehouse** para que os **indicadores estejam disponíveis às 05h** para os clientes consumirem.
+Os valores de ativos listados na B3 são disponibilizados em tempo real em um tópico Kafka para consulta. Esses dados precisam estar disponíveis para a área de investimento conseguir tomar as decisões de compra ou venda de ativos.
 
 ---
 
