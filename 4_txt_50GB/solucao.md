@@ -1,16 +1,22 @@
 # txt 50GB
 
-Consierando que o arquivo é armazenado no S3, é interessante uma abordagem utilizando a arquitetura AWS.
-Para trigger do processo será utilizada uma lambda function que monitora o bucket para verificar quando um novo arquivo chega.
-Como orquestrador de fluxo será utilizado o StepFunctions:
-    Após o início do fluxo o arquivo é processado via Glue Job, lá será feito o processo de ETL do arquivo.
-    O próximo passo é a aplicação de um processo de data quality 
-    Antes de salvar os arquivos no banco é importante uma validação que contém guardrails evitando o deploy de uma tabela com dados incorretos
-    Por final a tabela é criada no data warehouse (Redshift nesse exemplo)
-Como ferramenta de BI seria interessante o quicksight pensando em integração, pois é possível plugar direto no Redshift e fica tudo na mesma arquitetura cloud. 
+Considerando que o arquivo é armazenado no S3, é interessante uma abordagem utilizando a arquitetura AWS.
 
-Obs:
-    As queries podem ser realizadas no query editor do redshift, que aceita o padrão SQL.
-    Escolhi o Glue pois acredito ser a melhor ferramenta para isso, além de ser pouco complexo de configurar e fácil de schedular.
-    O redshift foi pensando no volume de dados e necessidade de ETL, então faz sentido ficar em um banco com persistência de dados, além de necessidade de queries e conexão com ferramentas de BI, como ele é dedicado, oferece baixa latência e um bom suporte pra alta concorrência.
-    O Quicksight foi pensando em facilidade de integração e manter tudo no mesmo ecossistema AWS.
+Para trigger do processo será utilizada uma Lambda Function que monitora o bucket para verificar quando um novo arquivo chega.
+
+Como orquestrador de fluxo será utilizado o Step Functions:
+- Após o início do fluxo, o arquivo é processado via Glue Job, onde será feito o processo de ETL.
+- O próximo passo é a aplicação de um processo de Data Quality.
+- Antes de salvar os arquivos no banco, é importante uma validação com guardrails, evitando o deploy de uma tabela com dados incorretos.
+- Por fim, a tabela é criada no Data Warehouse (Redshift neste exemplo).
+
+Como ferramenta de BI, seria interessante o uso do Amazon QuickSight, pensando na integração, pois é possível plugar direto no Redshift e manter tudo na mesma arquitetura cloud.
+
+---
+
+### Observações:
+
+- As queries podem ser realizadas no Query Editor do Redshift, que aceita o padrão SQL.
+- Escolhi o Glue pois acredito ser a melhor ferramenta para isso, além de ser pouco complexo de configurar e fácil de agendar (scheduler).
+- O Redshift foi escolhido pensando no volume de dados e na necessidade de ETL. Faz sentido manter em um banco com persistência de dados, além da necessidade de queries e conexão com ferramentas de BI. Como ele é dedicado, oferece baixa latência e bom suporte para alta concorrência.
+- O QuickSight foi escolhido por sua facilidade de integração e por manter tudo dentro do ecossistema AWS.
