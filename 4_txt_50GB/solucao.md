@@ -13,4 +13,4 @@ Obs:
     As queries podem ser realizadas no query editor do redshift, que aceita o padrão SQL.
     Escolhi o Glue pois acredito ser a melhor ferramenta para isso, além de ser pouco complexo de configurar e fácil de schedular.
     O redshift foi pensando no volume de dados e necessidade de ETL, então faz sentido ficar em um banco com persistência de dados, além de necessidade de queries e conexão com ferramentas de BI, como ele é dedicado, oferece baixa latência e um bom suporte pra alta concorrência.
-    O Quicksight foi pensando em facilidade de integração e manter tudo num mesmo ecossistema (AWS)
+    O Quicksight foi pensando em facilidade de integração e manter tudo no mesmo ecossistema AWS.
