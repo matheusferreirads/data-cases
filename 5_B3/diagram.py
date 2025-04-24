@@ -1,32 +1,43 @@
 from diagrams import Diagram, Cluster
+from diagrams.onprem.analytics import Flink
 from diagrams.aws.storage import S3
-from diagrams.aws.compute import Lambda
-from diagrams.aws.integration import StepFunctions
+from diagrams.saas.analytics import Snowflake
+from diagrams.onprem.monitoring import Prometheus, Grafana
 from diagrams.aws.analytics import Glue
-from diagrams.aws.database import Redshift
-from diagrams.aws.analytics import Quicksight
+from diagrams.custom import Custom
 
-with Diagram("ETL Pipeline on AWS with Step Functions", show=False, direction="LR"):
- 
-    with Cluster("Raw Data Storage"):
-        raw_bucket = S3("S3 Raw Bucket\n50GB .txt @03h")
+with Diagram("Streaming ETL", show=False, direction="LR"):
 
+    # Origem de dados em tempo real
+    with Cluster("Streaming Source"):
+        stream_input = Custom("Data Stream\n(Kafka)", "./icons/stream.png")
 
-    trigger_fn = Lambda("Lambda Trigger\n(S3 PUT)")
-
-
-    orchestrator = StepFunctions("Step Functions\n(State Machine)")
-
-
+    # Processamento com Flink + Checagem de qualidade
     with Cluster("Data Processing"):
-        etl_job = Glue("Glue ETL Job\n(clean • enrich • load)")
-        dq_job = Glue("Data Quality Job\n(validation • profiling)")
-        guardrail_check = Glue("Guardrails Check\n(thresholds • alerts)")
+        flink_job = Flink("Apache Flink\n(streaming ETL)")
+        dq_check = Custom("Real-time\nData Quality", "./icons/data_quality.png")
+        flink_job >> dq_check
 
-    dw = Redshift("Redshift DW\n(OLAP Storage)")
+    # Armazenamento + catálogo
+    with Cluster("Storage & Catalog"):
+        s3_landing = S3("S3 Bucket\n(raw + processed)")
+        catalog = Glue("Data Catalog")
 
+    # Observabilidade
+    monitoring = [Prometheus("Prometheus\n(metrics)"), Grafana("Grafana\n(dashboards)")]
 
-    dashboard = Quicksight("Quicksight\n(Dashboards)")
+    # Armazém de dados e visualização
+    with Cluster("Data Warehouse"):
+        snowflake = Snowflake("Snowflake\n(auto-scale DW + Snowsight)")
+        looker = Custom("Looker\n(advanced BI)", "./icons/kafka.png")
 
-    raw_bucket >> trigger_fn >> orchestrator
-    orchestrator >> etl_job >> dq_job >> guardrail_check >> dw >> dashboard
+    # Fluxo principal
+    stream_input >> flink_job
+    dq_check >> s3_landing
+    s3_landing >> snowflake
+    s3_landing >> catalog
+    snowflake >> looker
+
+    # Monitoramento
+    flink_job >> monitoring
+    dq_check >> monitoring
