@@ -11,7 +11,7 @@ Foram criados arquivos em código para execução e teste das classes e funçõe
 
 ```Python
 conda create -y -n myenv python=3.9
-conda activate myen
+conda activate myenv
 ```
 
 ---
