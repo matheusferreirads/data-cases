@@ -6,7 +6,6 @@ Explique, sucintamente, a diferença entre `BEGIN/END` dentro de um objeto de li
 
     No PL/pgSQL, as palavras-chave `BEGIN` e `END` servem apenas para delimitar um bloco de código dentro de funções ou procedimentos.
     No cliente psql `BEGIN;`  está acionando o mecanismo de transação do PostgreSQL, tudo o que vier em seguida (UPDATE, INSERT, DELETE...) ficará
-     
     “pendente” até que você confirme as alterações com um `COMMIT;` ou decida desfazê-las com um `ROLLBACK;`. Enquanto o `BEGIN…END` de PL/pgSQL não abre nem fecha transações, o `BEGIN` do psql é justamente o comando que inicia esse controle transacional.
 
 ---
