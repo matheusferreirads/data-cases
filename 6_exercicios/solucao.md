@@ -3,6 +3,7 @@
 Explique, sucintamente, a diferença entre `BEGIN/END` dentro de um objeto de linguagem procedural PL/pgSQL e o `BEGIN` que se executa no cliente `psql` para execução de uma simples DML, como um `UPDATE`.
 
 **Resposta**
+
     No PL/pgSQL, as palavras-chave `BEGIN` e `END` servem apenas para delimitar um bloco de código dentro de funções ou procedimentos.
     No cliente psql `BEGIN;`  está acionando o mecanismo de transação do PostgreSQL, tudo o que vier em seguida (UPDATE, INSERT, DELETE...) ficará “pendente” até que você confirme as alterações com um `COMMIT;` ou decida desfazê-las com um `ROLLBACK;`. Enquanto o `BEGIN…END` de PL/pgSQL não abre nem fecha transações, o `BEGIN` do psql é justamente o comando que inicia esse controle transacional.
 
@@ -18,7 +19,8 @@ Assinale a alternativa que corretamente concatena as palavras ‘ABC’ e ‘def
 - D. `SELECT 'ABC' + 'def' FROM dual;`
 - E. `SELECT 'ABC' || 'def';`
 
-**Resposta**
+**Resposta:**
+
     Alternativa correta: **E**
 
 ---
@@ -34,6 +36,7 @@ O PostgreSQL pode usar índices para acessar uma tabela. Assinale **duas alterna
 - E. Criar um índice que não esteja sendo utilizado por nenhuma query não altera de forma alguma o desempenho do banco de dados.
 
 **Resposta**
+
     Alternativas INCORRETAS: **D**, **E**
 
 ---
@@ -49,7 +52,8 @@ Assinale **duas afirmações corretas** sobre `VIEWS` no PostgreSQL:
 - E. Uma VIEW só existe enquanto o processo postmaster está rodando, sendo eliminada quando o servidor para.
 
 
-**Resposta**
+**Resposta:**
+
     Alternativas INCORRETAS: **B**, **C**
 ---
 
@@ -107,6 +111,7 @@ Assinale a alternativa **incorreta** sobre PostgreSQL:
 - D. Define-se o esquema que deseja trabalhar com `search_path` para evitar usar o nome do esquema nas tabelas o tempo todo.
 - E. Os valores do `search_path` podem conter esquemas separados por vírgula.
 
-**Resposta**
+**Resposta:** 
+
     Alternativa INCORRETA: **C**
 ---
