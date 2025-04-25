@@ -21,7 +21,7 @@ Assinale a alternativa que corretamente concatena as palavras ‘ABC’ e ‘def
 
 **Resposta:**
 
-    Alternativa correta: **E**
+    Alternativa correta: E
 
 ---
 
@@ -37,7 +37,7 @@ O PostgreSQL pode usar índices para acessar uma tabela. Assinale **duas alterna
 
 **Resposta**
 
-    Alternativas INCORRETAS: **D**, **E**
+    Alternativas: D, E
 
 ---
 
@@ -54,7 +54,7 @@ Assinale **duas afirmações corretas** sobre `VIEWS` no PostgreSQL:
 
 **Resposta:**
 
-    Alternativas INCORRETAS: **B**, **C**
+    Alternativas: B, C
 ---
 
 ## 5) Query com subquery
@@ -113,5 +113,5 @@ Assinale a alternativa **incorreta** sobre PostgreSQL:
 
 **Resposta:** 
 
-    Alternativa INCORRETA: **C**
+    Alternativa: C
 ---
