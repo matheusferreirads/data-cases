@@ -2,6 +2,10 @@
 
 Explique, sucintamente, a diferença entre `BEGIN/END` dentro de um objeto de linguagem procedural PL/pgSQL e o `BEGIN` que se executa no cliente `psql` para execução de uma simples DML, como um `UPDATE`.
 
+**Resposta**
+    No PL/pgSQL, as palavras-chave `BEGIN` e `END` servem apenas para delimitar um bloco de código dentro de funções ou procedimentos.
+    No cliente psql `BEGIN;`  está acionando o mecanismo de transação do PostgreSQL, tudo o que vier em seguida (UPDATE, INSERT, DELETE...) ficará “pendente” até que você confirme as alterações com um `COMMIT;` ou decida desfazê-las com um `ROLLBACK;`. Enquanto o `BEGIN…END` de PL/pgSQL não abre nem fecha transações, o `BEGIN` do psql é justamente o comando que inicia esse controle transacional.
+
 ---
 
 ## 2) Concatenação de strings no PostgreSQL
@@ -13,6 +17,9 @@ Assinale a alternativa que corretamente concatena as palavras ‘ABC’ e ‘def
 - C. `SELECT 'ABC' + 'def' FROM duaL;`
 - D. `SELECT 'ABC' + 'def' FROM dual;`
 - E. `SELECT 'ABC' || 'def';`
+
+**Resposta**
+    Alternativa correta: **E**
 
 ---
 
@@ -26,6 +33,9 @@ O PostgreSQL pode usar índices para acessar uma tabela. Assinale **duas alterna
 - D. Quando se cria um índice, a query que usa aquela coluna indexada fica sempre mais rápida.
 - E. Criar um índice que não esteja sendo utilizado por nenhuma query não altera de forma alguma o desempenho do banco de dados.
 
+**Resposta**
+    Alternativas INCORRETAS: **D**, **E**
+
 ---
 
 ## 4) `VIEWS` no PostgreSQL
@@ -38,6 +48,9 @@ Assinale **duas afirmações corretas** sobre `VIEWS` no PostgreSQL:
 - D. Uma VIEW pode ser criada com o mesmo nome de uma tabela no esquema em questão.
 - E. Uma VIEW só existe enquanto o processo postmaster está rodando, sendo eliminada quando o servidor para.
 
+
+**Resposta**
+    Alternativas INCORRETAS: **B**, **C**
 ---
 
 ## 5) Query com subquery
@@ -54,6 +67,21 @@ Baseado na tabela `EMPREGADOS` abaixo, escreva uma query (usando subquery) que r
 |300 | Geraldo     | Silva      | 2001-10-01 |  8300.00 |       0.00     |     205    |      110      |
 +----+-------------+------------+------------+----------+----------------+------------+---------------+
 ```
+```sql
+SELECT
+  id,
+  first_name,
+  manager_id,
+  salary
+FROM empregados
+WHERE salary > (
+  SELECT MAX(salary)
+  FROM empregados
+  WHERE manager_id = 100
+)
+ORDER BY salary;
+```
+
 
 ---
 
@@ -61,11 +89,11 @@ Baseado na tabela `EMPREGADOS` abaixo, escreva uma query (usando subquery) que r
 
 Baseado na pergunta anterior, responda V para verdadeiro e F para falso nas afirmações abaixo:
 
-- A. ( ) Um índice composto nas colunas (`manager_id`, `salary`) é recomendado.
-- B. ( ) A query requisitada será sempre lenta, não importando como está indexada a tabela.
-- C. ( ) O PostgreSQL sempre fará a ordenação em disco, independente do índice usado.
-- D. ( ) Um índice de função (índice com expressão) deixaria a query mais rápida.
-- E. ( ) O PostgreSQL permite que se use tabelas temporárias para evitar o uso de subqueries.
+- A. (**V**) Um índice composto nas colunas (`manager_id`, `salary`) é recomendado.
+- B. (**F**) A query requisitada será sempre lenta, não importando como está indexada a tabela.
+- C. (**F**) O PostgreSQL sempre fará a ordenação em disco, independente do índice usado.
+- D. (**V**) Um índice de função (índice com expressão) deixaria a query mais rápida.
+- E. (**V**) O PostgreSQL permite que se use tabelas temporárias para evitar o uso de subqueries.
 
 ---
 
@@ -79,4 +107,6 @@ Assinale a alternativa **incorreta** sobre PostgreSQL:
 - D. Define-se o esquema que deseja trabalhar com `search_path` para evitar usar o nome do esquema nas tabelas o tempo todo.
 - E. Os valores do `search_path` podem conter esquemas separados por vírgula.
 
+**Resposta**
+    Alternativa INCORRETA: **C**
 ---
