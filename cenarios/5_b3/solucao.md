@@ -1,5 +1,39 @@
 # B3 Streaming Data
 
+- [Cenário](#cenário)
+    - [Tarefa](#tarefa)
+    - [Entregáveis](#entregáveis)
+    
+- [Solução](#solução)
+    - [Pipeline de Dados](#pipeline-de-dados)
+    - [Descrição](#descrição)
+
+
+## Cenário
+
+Os valores de ativos listados na B3 são disponibilizados em tempo real em um tópico Kafka para consulta. Esses dados precisam estar disponíveis para a área de investimento conseguir tomar as decisões de compra ou venda de ativos.
+
+
+### Tarefa
+
+Monte a arquitetura de um pipeline que faça a ingestão, tratamento e disponibilização desses dados de forma estruturada para consumo via queries e via dashboard.
+
+
+### Entregáveis
+
+- Desenho da arquitetura contendo as ferramentas utilizadas  
+- Breve descrição do motivo da escolha das ferramentas
+
+---
+## Solução
+
+### Pipeline de Dados
+
+![Pipeline de Dados](streaming_data_pipeline.png)
+
+
+### Descrição
+
 Pra esse case a ideia é utilizar o Flink para tratar os dados em streaming disponibilizados e armazenar eles diretamente no S3 (AWS), pensando em capacidade de armazenamento e menor complexidade de processo. 
 
 O Grafana e o Prometheus seriam utilizados para monitoramento e logs do Flink.

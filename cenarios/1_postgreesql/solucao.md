@@ -2,7 +2,8 @@
 
 - [Cenário](#Cenário)
     - [Tarefa](#Tarefa)
--[Solução](#Solução)
+
+- [Solução](#Solução)
 
 
 
@@ -13,12 +14,12 @@ Ele será utilizado por colaboradores em São Paulo, Nova York e Londres com alt
 
 
 
-#### Tarefa
+### Tarefa
 
 Quais aspectos e configurações devem ser levadas em consideração na disponibilização desse banco de dados? Explique-os.
 
 
----
+-----
 
 ## Solução
 
