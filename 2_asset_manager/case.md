@@ -3,7 +3,7 @@
 - [Cenário](#cenário)
     - [Requisitos Específicos](#requisitos-específicos)
     - [Tarefa](#tarefa)
-    -[Entregáveis](#entregáveis)
+    - [Entregáveis](#entregáveis)
 
 - [Solução](#solução)
     - [Modelo ER](#modelo-er)
@@ -27,13 +27,13 @@ Uma asset manager está expandindo sua operação de gestão de investimentos e 
 
 ### Tarefa
 
-Baseando-se nos requisitos acima, crie um **modelo Entidade-Relacionamento (ER)** detalhado para o sistema de gestão de investimentos da asset manager. Seu modelo deve incluir todas as entidades mencionadas, seus atributos específicos e os relacionamentos entre elas. Considere as **melhores práticas de normalização** para evitar redundâncias e garantir a integridade dos dados.
+Baseando-se nos requisitos acima, crie um modelo Entidade-Relacionamento (ER) detalhado para o sistema de gestão de investimentos da asset manager. Seu modelo deve incluir todas as entidades mencionadas, seus atributos específicos e os relacionamentos entre elas. Considere as melhores práticas de normalização para evitar redundâncias e garantir a integridade dos dados.
 
 
 ### Entregáveis
 
-- **Um diagrama do modelo ER**, mostrando entidades, atributos e relacionamentos  
-- **Uma breve descrição de cada entidade e relacionamento** no seu modelo
+- Um diagrama do modelo ER, mostrando entidades, atributos e relacionamentos  
+- Uma breve descrição de cada entidade e relacionamento no seu modelo
 
 ---
 
