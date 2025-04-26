@@ -159,5 +159,5 @@ Comparativo com Outros Decorators de Cache
 
 ### Código
 
-![Código](decorator_computer_property.ipynb)
+[Código](decorator_computer_property.ipynb)
 
