@@ -159,8 +159,8 @@ Comparativo com Outros Decorators de Cache
 
 ### Código
 
-[Código .py](decorator_computer_property.ipynb)
-[Código .ipynb](decorator_computer_property.ipynb)
+- [Código .py](decorator_computer_property.ipynb)
+- [Código .ipynb](decorator_computer_property.ipynb)
 
 
 #### Decorator Class
@@ -265,7 +265,6 @@ v.y = 18
 print(v.magnitude) 
 ```
 
-##### Output
 ```
 computing magnitude
 11.0
@@ -273,7 +272,6 @@ computing magnitude
 computing magnitude
 21.0
 ```
-
 
 ```python
 class Circle:
@@ -307,7 +305,6 @@ print(circle.radius)
 help(Circle)
 ```
 
-##### Output
 ```
 2
 1.5
