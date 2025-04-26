@@ -1,3 +1,5 @@
+# Exercícios 
+
 ## 1) Diferença entre `BEGIN/END` e `BEGIN` no `psql`
 
 Explique, sucintamente, a diferença entre `BEGIN/END` dentro de um objeto de linguagem procedural PL/pgSQL e o `BEGIN` que se executa no cliente `psql` para execução de uma simples DML, como um `UPDATE`.
@@ -72,6 +74,9 @@ Baseado na tabela `EMPREGADOS` abaixo, escreva uma query (usando subquery) que r
 |300 | Geraldo     | Silva      | 2001-10-01 |  8300.00 |       0.00     |     205    |      110      |
 +----+-------------+------------+------------+----------+----------------+------------+---------------+
 ```
+
+**Resposta**
+
 ```sql
 SELECT
   id,
