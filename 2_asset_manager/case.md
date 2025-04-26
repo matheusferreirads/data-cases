@@ -5,7 +5,7 @@
     - [Tarefa](#tarefa)
     -[Entregáveis](#entregáveis)
 
-- [Solução]
+- [Solução](#solução)
     - [Modelo ER](#modelo-er)
     - [Descrição](#descrição)
 
@@ -41,7 +41,7 @@ Baseando-se nos requisitos acima, crie um **modelo Entidade-Relacionamento (ER)*
 
 ### Modelo ER
 
-![Modelo ER](2_asset_manager\diagrama_ER_asset.png)
+![Modelo ER](diagrama_ER_asset.png)
 
 ### Descrição
 
