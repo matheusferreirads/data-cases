@@ -69,7 +69,6 @@ class computed_property:
             
 
 #-------------------------------------------------------------------------------------------------------------------------------
-       
 from math import sqrt
 class Vector:
     def __init__(self, x, y, z, color=None):
