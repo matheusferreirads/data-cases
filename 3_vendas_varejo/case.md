@@ -49,11 +49,11 @@ A partir do modelo ER fornecido, desenvolva um Star Schema para otimizar as aná
 
 ### Modelo ER
 
-![Modelo ER](diagrama_ER_varejo)
+![Modelo ER](diagrama_ER_varejo.png)
 
 ### Star Schema
 
-![Star Schema](star_schema)
+![Star Schema](star_schema.png)
 
 
 ### Descrição
