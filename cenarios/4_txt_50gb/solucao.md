@@ -2,7 +2,6 @@
 
 
 - [Cenário](#cenário)
-    - [Requisitos Específicos](#requisitos-específicos)
     - [Tarefa](#tarefa)
     - [Entregáveis](#entregáveis)
 - [Solução](#solução)

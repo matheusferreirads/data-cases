@@ -2,7 +2,6 @@
 
 
 - [Cenário](#cenário)
-    - [Cenário](#cenário)
 
 - [Solução](#solução)
     - [Código](#código)
