@@ -10,7 +10,7 @@
 
 Escreva uma função chamada `last_lines` que devolve as linhas de um arquivo de texto em ordem inversa. Caso esteja familiarizado com a linha de comando Unix, essa função deve ter o mesmo comportamento do comando `tac`.
 
-### Exemplo de arquivo: `my_file.txt`
+Exemplo de arquivo: `my_file.txt`
 ```
 This is a file
 This is line 2
