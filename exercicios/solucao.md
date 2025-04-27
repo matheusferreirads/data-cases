@@ -10,7 +10,6 @@ Explique, sucintamente, a diferença entre `BEGIN/END` dentro de um objeto de li
     No cliente psql `BEGIN;`  está acionando o mecanismo de transação do PostgreSQL, tudo o que vier em seguida (UPDATE, INSERT, DELETE...) ficará
     “pendente” até que você confirme as alterações com um `COMMIT;` ou decida desfazê-las com um `ROLLBACK;`. Enquanto o `BEGIN…END` de PL/pgSQL não abre nem fecha transações, o `BEGIN` do psql é justamente o comando que inicia esse controle transacional.
 
----
 
 ## 2) Concatenação de strings no PostgreSQL
 
@@ -26,7 +25,6 @@ Assinale a alternativa que corretamente concatena as palavras ‘ABC’ e ‘def
 
     Alternativa correta: E
 
----
 
 ## 3) Índices no PostgreSQL
 
@@ -42,7 +40,7 @@ O PostgreSQL pode usar índices para acessar uma tabela. Assinale **duas alterna
 
     Alternativas: D, E
 
----
+
 
 ## 4) `VIEWS` no PostgreSQL
 
@@ -58,7 +56,6 @@ Assinale **duas afirmações corretas** sobre `VIEWS` no PostgreSQL:
 **Resposta:**
 
     Alternativas: B, C
----
 
 ## 5) Query com subquery
 
@@ -93,7 +90,7 @@ ORDER BY salary;
 ```
 
 
----
+
 
 ## 6) Verdadeiro (V) ou Falso (F)
 
@@ -105,7 +102,7 @@ Baseado na pergunta anterior, responda V para verdadeiro e F para falso nas afir
 - D. (**V**) Um índice de função (índice com expressão) deixaria a query mais rápida.
 - E. (**V**) O PostgreSQL permite que se use tabelas temporárias para evitar o uso de subqueries.
 
----
+
 
 ## 7) Alternativa incorreta sobre PostgreSQL
 
@@ -120,4 +117,3 @@ Assinale a alternativa **incorreta** sobre PostgreSQL:
 **Resposta:** 
 
     Alternativa: C
----
