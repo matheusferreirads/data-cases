@@ -4,7 +4,7 @@
     - [Exemplo de Uso](#exemplo-de-uso)
 
 - [Solução](#solução)
-    - [Código](#codigo)
+    - [Código](#código)
 
 ## Cenário
 
@@ -121,10 +121,31 @@ class Circle:
 ```
 
 ```python
->>> help(Circle)
-...
-|  diameter
-|      Circle diameter from radius
+ >>> help(Circle)
+ Help on class Circle in module __main__:
+ class Circle(builtins.object)
+ |  Circle(radius=1)
+ |
+ |  Methods defined here:
+ |
+ |  __init__(self, radius=1)
+ |      
+Initialize self.  See help(type(self)) for accurate signature.
+ |
+ |  __weakref__
+ |      
+|
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |
+ |  __dict__
+ |      
+dictionary for instance variables (if defined)
+ list of weak references to the object (if defined)
+ |
+ |  diameter
+ |      
+Circle diameter from radius
 ```
 
 
@@ -159,7 +180,7 @@ Comparativo com Outros Decorators de Cache
 
 ### Código
 
-- [Código .py](decorator_computer_property.ipynb)
+- [Código .py](decorator_computer_property.py)
 - [Código .ipynb](decorator_computer_property.ipynb)
 
 
