@@ -1,5 +1,6 @@
 import io
 import os
+from pprint import pprint
 
 def last_lines(file_path, bufsize=io.DEFAULT_BUFFER_SIZE):
     try:
@@ -64,6 +65,6 @@ for line in last_lines('my_file.txt'):
     
     
 lines = last_lines('my_file.txt')
-next(lines)
-next(lines)
-next(lines)
+pprint(next(lines))
+pprint(next(lines))
+pprint(next(lines))
